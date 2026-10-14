@@ -1,0 +1,90 @@
+/* ==========================================================================
+   She Harvest - Booking Management Stylesheet
+   Path: officer/css/bookings.css
+   ========================================================================== */
+
+.booking-urgency-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-sm);
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.booking-urgency-tag.warning {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.booking-urgency-tag.normal {
+  background-color: #f1f5ee;
+  color: #5e7367;
+}
+
+/* Rejection / Reschedule Reason Box in Modal */
+.action-reason-box {
+  background-color: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: var(--radius-sm);
+  padding: 0.85rem;
+  margin-bottom: 1.25rem;
+  font-size: 0.84rem;
+  color: #92400e;
+  line-height: 1.45;
+}
+
+.action-reason-box.reject {
+  background-color: #fef2f2;
+  border-color: #fecaca;
+  color: #991b1b;
+}
+
+.booking-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.booking-detail-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.booking-detail-label {
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+}
+
+.booking-detail-val {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+  margin-top: 0.15rem;
+}
+
+.fairness-protection-callout {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  background-color: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: var(--radius-sm);
+  padding: 0.85rem;
+  font-size: 0.82rem;
+  color: #166534;
+  line-height: 1.45;
+}
+
+.fairness-protection-callout svg {
+  flex-shrink: 0;
+  color: #16a34a;
+  margin-top: 0.1rem;
+}

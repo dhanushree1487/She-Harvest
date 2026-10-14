@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="She Harvest Booking Management - Review, filter, approve, reschedule or reject agricultural machinery requests.">
+  <title>Booking Management | She Harvest Officer Portal</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Core & Shared Stylesheets -->
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/bookings.css">
+</head>
+<body class="officer-app-layout">
+
+  <!-- =========================================================================
+       1. Sidebar Navigation
+       ========================================================================= -->
+  <aside class="officer-sidebar" aria-label="Officer Sidebar Navigation">
+    
+    <div class="sidebar-header">
+      <a href="../dashboard.html" class="sidebar-logo">
+        <div class="sidebar-logo-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2a9 9 0 0 1 9 9c0 4.97-4.03 9-9 9A9 9 0 0 1 3 11a9 9 0 0 1 9-9z"></path>
+            <path d="M12 7v10"></path>
+            <path d="M8 12c1.5 1 3 1 4 0s2.5-1 4 0"></path>
+          </svg>
+        </div>
+        <div class="sidebar-logo-text">
+          <span class="sidebar-logo-title">She<span>Harvest</span></span>
+          <span class="sidebar-logo-badge">Officer Operations</span>
+        </div>
+      </a>
+      <span class="sidebar-badge-pill">V1.0</span>
+    </div>
+
+    <!-- Navigation Links -->
+    <nav class="sidebar-nav">
+      
+      <span class="nav-section-title">Core Management</span>
+
+      <a href="../dashboard.html" class="sidebar-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+        <span>Dashboard</span>
+      </a>
+
+      <a href="bookings.html" class="sidebar-link active">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+        <span>Booking Management</span>
+        <span class="nav-counter">18</span>
+      </a>
+
+      <a href="priority-scheduling.html" class="sidebar-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+        <span>AI Priority & Scheduling</span>
+        <span class="nav-counter" style="background-color: #fef3c7; color: #92400e;">7 Hot</span>
+      </a>
+
+      <a href="machinery.html" class="sidebar-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+        <span>Machinery Management</span>
+      </a>
+
+      <span class="nav-section-title">Oversight & Accountability</span>
+
+      <a href="alerts-complaints.html" class="sidebar-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+        <span>Alerts & Complaints</span>
+        <span class="nav-counter alert-counter">4</span>
+      </a>
+
+      <a href="fairness-reports.html" class="sidebar-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+        <span>Fairness & Reports</span>
+      </a>
+
+      <a href="audit-log.html" class="sidebar-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        <span>Audit Log</span>
+      </a>
+
+    </nav>
+
+    <!-- Officer Profile & Logout -->
+    <div class="sidebar-footer">
+      <div class="officer-profile-card">
+        <div class="officer-avatar" aria-hidden="true">LR</div>
+        <div class="officer-details">
+          <span class="officer-name">Lakshmi Ramanathan</span>
+          <span class="officer-role">District Agronomy Lead</span>
+        </div>
+        <a href="../login.html" class="officer-logout-btn" title="Sign out" aria-label="Sign out">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+        </a>
+      </div>
+    </div>
+
+  </aside>
+
+  <!-- =========================================================================
+       2. Main Content Wrapper
+       ========================================================================= -->
+  <div class="officer-main-wrapper">
+    
+    <!-- Topbar -->
+    <header class="officer-topbar">
+      <div class="topbar-left">
+        <button type="button" class="sidebar-toggle-btn" id="sidebar-toggle-btn" aria-label="Toggle navigation menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+
+        <div class="topbar-page-heading">
+          <h1 class="topbar-title">Booking Management</h1>
+          <div class="topbar-breadcrumbs">
+            <a href="../dashboard.html">Dashboard</a> &gt; <span>Bookings Queue</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Search Bar -->
+      <div class="topbar-search-form">
+        <svg class="topbar-search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input 
+          type="text" 
+          id="topbar-search-input" 
+          class="topbar-search-input" 
+          placeholder="Quick search bookings...">
+        <span class="topbar-search-shortcut">Ctrl+K</span>
+      </div>
+
+      <!-- Right Actions -->
+      <div class="topbar-right">
+        <div class="demo-indicator-pill">
+          <span class="indicator-dot"></span>
+          Sample Data Mode
+        </div>
+
+        <button type="button" class="topbar-action-btn" id="topbar-notification-btn" aria-label="Notifications">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+          <span class="notification-badge-count">3</span>
+        </button>
+
+        <div class="notification-dropdown" id="notification-dropdown">
+          <div class="notification-dropdown-header">
+            <h4>System Notifications</h4>
+            <a href="#" id="mark-all-read-btn">Mark all read</a>
+          </div>
+          <div class="notification-list">
+            <div class="notification-item unread">
+              <div class="notification-content">
+                <div class="notification-title">Unfair Postponement Flag</div>
+                <div class="notification-desc">Farmer FMR-409 was postponed twice. Score raised to 94.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="officer-content-body">
+      
+      <!-- Module Header -->
+      <div class="module-header-block">
+        <div class="module-title-group">
+          <h2>Machinery Booking Queue</h2>
+          <p>Review, verify, approve, and manage machinery allocations for smallholder women farmers.</p>
+        </div>
+        <div class="module-action-buttons">
+          <a href="priority-scheduling.html" class="btn btn-outline btn-sm">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            View Priority Matrix
+          </a>
+          <a href="machinery.html" class="btn btn-primary btn-sm">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+            Inspect Fleet
+          </a>
+        </div>
+      </div>
+
+      <!-- Bookings Card Container -->
+      <div class="admin-card">
+        
+        <!-- Table Toolbar: Filters & In-Module Search -->
+        <div class="table-toolbar">
+          <div class="toolbar-filters">
+            <button type="button" class="filter-btn booking-filter-btn active" data-status="all">All Bookings (142)</button>
+            <button type="button" class="filter-btn booking-filter-btn" data-status="pending">Pending (18)</button>
+            <button type="button" class="filter-btn booking-filter-btn" data-status="approved">Approved (78)</button>
+            <button type="button" class="filter-btn booking-filter-btn" data-status="in-progress">In Ops (19)</button>
+            <button type="button" class="filter-btn booking-filter-btn" data-status="rescheduled">Rescheduled (3)</button>
+            <button type="button" class="filter-btn booking-filter-btn" data-status="rejected">Rejected (5)</button>
+          </div>
+
+          <div class="toolbar-search">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="text" id="booking-search-input" placeholder="Search farmer, ID, location...">
+          </div>
+        </div>
+
+        <!-- Bookings Data Table -->
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Booking ID</th>
+                <th>Farmer Details</th>
+                <th>Location & Acreage</th>
+                <th>Machine Requested</th>
+                <th>Requested Date</th>
+                <th>Harvest Deadline</th>
+                <th>Score</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="bookings-table-body">
+              
+              <!-- Row 1: High Urgency Pending -->
+              <tr data-status="pending">
+                <td class="col-booking-id"><strong>BK-2026-081</strong></td>
+                <td class="col-farmer">
+                  <div class="col-farmer-name" style="font-weight: 700;">Ananya Devi</div>
+                  <div class="col-farmer-id" style="font-size: 0.75rem; color: #5e7367;">FMR-409</div>
+                </td>
+                <td class="col-location">Kumbakonam East (2.2 ac)</td>
+                <td class="col-machine">Combine Harvester (75 HP)</td>
+                <td class="col-date">2026-10-15</td>
+                <td class="col-deadline">
+                  <span class="booking-urgency-tag">Oct 17 (2d left)</span>
+                </td>
+                <td class="col-score">
+                  <span class="score-badge high">94</span>
+                </td>
+                <td class="col-status">
+                  <span class="status-pill status-pending">Pending</span>
+                </td>
+                <td>
+                  <div class="action-btn-group">
+                    <button type="button" class="btn-icon-action approve btn-approve-booking" title="Approve Request">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                    <button type="button" class="btn-icon-action btn-reschedule-booking" title="Reschedule Request">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    </button>
+                    <button type="button" class="btn-icon-action reject btn-reject-booking" title="Reject Request">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    </button>
+                    <button type="button" class="btn-icon-action btn-view-booking" title="View Full Details">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 2: Pending with prior postponement -->
+              <tr data-status="pending">
+                <td class="col-booking-id"><strong>BK-2026-082</strong></td>
+                <td class="col-farmer">
+                  <div class="col-farmer-name" style="font-weight: 700;">Meenakshi Sundaram</div>
+                  <div class="col-farmer-id" style="font-size: 0.75rem; color: #5e7367;">FMR-411</div>
+                </td>
+                <td class="col-location">Pattukkottai (1.5 ac)</td>
+                <td class="col-machine">Multi-Crop Paddy Thresher</td>
+                <td class="col-date">2026-10-15</td>
+                <td class="col-deadline">
+                  <span class="booking-urgency-tag warning">Oct 18 (3d left)</span>
+                </td>
+                <td class="col-score">
+                  <span class="score-badge high">89</span>
+                </td>
+                <td class="col-status">
+                  <span class="status-pill status-pending">Pending</span>
+                </td>
+                <td>
+                  <div class="action-btn-group">
+                    <button type="button" class="btn-icon-action approve btn-approve-booking" title="Approve Request">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                    <button type="button" class="btn-icon-action btn-reschedule-booking" title="Reschedule Request">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    </button>
+                    <button type="button" class="btn-icon-action reject btn-reject-booking" title="Reject Request">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    </button>
+                    <button type="button" class="btn-icon-action btn-view-booking" title="View Full Details">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 3: Approved -->
+              <tr data-status="approved">
+                <td class="col-booking-id"><strong>BK-2026-079</strong></td>
+                <td class="col-farmer">
+                  <div class="col-farmer-name" style="font-weight: 700;">Kavitha Murugesan</div>
+                  <div class="col-farmer-id" style="font-size: 0.75rem; color: #5e7367;">FMR-394</div>
+                </td>
+                <td class="col-location">Thanjavur West (3.0 ac)</td>
+                <td class="col-machine">Combine Harvester (60 HP)</td>
+                <td class="col-date">2026-10-16</td>
+                <td class="col-deadline">
+                  <span class="booking-urgency-tag normal">Oct 20 (5d left)</span>
+                </td>
+                <td class="col-score">
+                  <span class="score-badge medium">78</span>
+                </td>
+                <td class="col-status">
+                  <span class="status-pill status-approved">Approved</span>
+                </td>
+                <td>
+                  <div class="action-btn-group">
+                    <button type="button" class="btn-icon-action btn-reschedule-booking" title="Reschedule Request">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    </button>
+                    <button type="button" class="btn-icon-action btn-view-booking" title="View Full Details">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 4: In Progress -->
+              <tr data-status="in-progress">
+                <td class="col-booking-id"><strong>BK-2026-077</strong></td>
+                <td class="col-farmer">
+                  <div class="col-farmer-name" style="font-weight: 700;">Rukmani Selvam</div>
+                  <div class="col-farmer-id" style="font-size: 0.75rem; color: #5e7367;">FMR-380</div>
+                </td>
+                <td class="col-location">Mayiladuthurai (1.0 ac)</td>
+                <td class="col-machine">Paddy Transplanter</td>
+                <td class="col-date">2026-10-14</td>
+                <td class="col-deadline">
+                  <span class="booking-urgency-tag normal">In Progress</span>
+                </td>
+                <td class="col-score">
+                  <span class="score-badge normal">64</span>
+                </td>
+                <td class="col-status">
+                  <span class="status-pill status-in-progress">In Ops</span>
+                </td>
+                <td>
+                  <div class="action-btn-group">
+                    <button type="button" class="btn-icon-action btn-view-booking" title="View Full Details">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 5: Rescheduled with prior reason -->
+              <tr data-status="rescheduled">
+                <td class="col-booking-id"><strong>BK-2026-074</strong></td>
+                <td class="col-farmer">
+                  <div class="col-farmer-name" style="font-weight: 700;">Selvi Muthu</div>
+                  <div class="col-farmer-id" style="font-size: 0.75rem; color: #5e7367;">FMR-388</div>
+                </td>
+                <td class="col-location">Pattukkottai Coastal (1.8 ac)</td>
+                <td class="col-machine">Combine Harvester (75 HP)</td>
+                <td class="col-date">2026-10-16</td>
+                <td class="col-deadline">
+                  <span class="booking-urgency-tag">Oct 17 (1d left)</span>
+                </td>
+                <td class="col-score">
+                  <span class="score-badge high">96</span>
+                </td>
+                <td class="col-status">
+                  <span class="status-pill status-pending" style="background:#fffbeb; color:#b45309; border-color:#fde68a;">Rescheduled</span>
+                </td>
+                <td>
+                  <div class="action-btn-group">
+                    <button type="button" class="btn-icon-action approve btn-approve-booking" title="Approve Request">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                    <button type="button" class="btn-icon-action btn-view-booking" title="View Full Details">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- Row 6: Rejected with logged reason -->
+              <tr data-status="rejected">
+                <td class="col-booking-id"><strong>BK-2026-070</strong></td>
+                <td class="col-farmer">
+                  <div class="col-farmer-name" style="font-weight: 700;">Kamala Kannan</div>
+                  <div class="col-farmer-id" style="font-size: 0.75rem; color: #5e7367;">FMR-365</div>
+                </td>
+                <td class="col-location">Tiruvarur Central (4.5 ac)</td>
+                <td class="col-machine">Combine Harvester (75 HP)</td>
+                <td class="col-date">2026-10-12</td>
+                <td class="col-deadline">
+                  <span class="booking-urgency-tag normal">Expired</span>
+                </td>
+                <td class="col-score">
+                  <span class="score-badge normal">48</span>
+                </td>
+                <td class="col-status">
+                  <span class="status-pill status-rejected">Rejected</span>
+                </td>
+                <td>
+                  <div class="action-btn-group">
+                    <button type="button" class="btn-icon-action btn-view-booking" title="View Logged Reason">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" aria-live="polite"></div>
+
+  <!-- Scripts -->
+  <script src="../js/navigation.js"></script>
+  <script src="../js/bookings.js"></script>
+</body>
+</html>

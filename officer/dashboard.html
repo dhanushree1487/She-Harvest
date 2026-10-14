@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="She Harvest Officer Dashboard - Operations, queue overview, machine allocation, and fairness alerts for women smallholder farmers.">
+  <title>Officer Dashboard | She Harvest Operations</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Core & Shared Stylesheets -->
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body class="officer-app-layout">
+
+  <!-- =========================================================================
+       1. Sidebar Navigation
+       ========================================================================= -->
+  <aside class="officer-sidebar" aria-label="Officer Sidebar Navigation">
+    
+    <div class="sidebar-header">
+      <a href="dashboard.html" class="sidebar-logo">
+        <div class="sidebar-logo-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2a9 9 0 0 1 9 9c0 4.97-4.03 9-9 9A9 9 0 0 1 3 11a9 9 0 0 1 9-9z"></path>
+            <path d="M12 7v10"></path>
+            <path d="M8 12c1.5 1 3 1 4 0s2.5-1 4 0"></path>
+          </svg>
+        </div>
+        <div class="sidebar-logo-text">
+          <span class="sidebar-logo-title">She<span>Harvest</span></span>
+          <span class="sidebar-logo-badge">Officer Operations</span>
+        </div>
+      </a>
+      <span class="sidebar-badge-pill">V1.0</span>
+    </div>
+
+    <!-- Navigation Links -->
+    <nav class="sidebar-nav">
+      
+      <span class="nav-section-title">Core Management</span>
+
+      <a href="dashboard.html" class="sidebar-link active">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="7" height="7"></rect>
+          <rect x="14" y="3" width="7" height="7"></rect>
+          <rect x="14" y="14" width="7" height="7"></rect>
+          <rect x="3" y="14" width="7" height="7"></rect>
+        </svg>
+        <span>Dashboard</span>
+      </a>
+
+      <a href="modules/bookings.html" class="sidebar-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+        </svg>
+        <span>Booking Management</span>
+        <span class="nav-counter">18</span>
+      </a>
+
+      <a href="modules/priority-scheduling.html" class="sidebar-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+        </svg>
+        <span>AI Priority & Scheduling</span>
+        <span class="nav-counter" style="background-color: #fef3c7; color: #92400e;">7 Hot</span>
+      </a>
+
+      <a href="modules/machinery.html" class="sidebar-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="1" y="3" width="15" height="13"></rect>
+          <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+          <circle cx="5.5" cy="18.5" r="2.5"></circle>
+          <circle cx="18.5" cy="18.5" r="2.5"></circle>
+        </svg>
+        <span>Machinery Management</span>
+      </a>
+
+      <span class="nav-section-title">Oversight & Accountability</span>
+
+      <a href="modules/alerts-complaints.html" class="sidebar-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+          <line x1="12" y1="9" x2="12" y2="13"></line>
+          <line x1="12" y1="17" x2="12.01" y2="17"></line>
+        </svg>
+        <span>Alerts & Complaints</span>
+        <span class="nav-counter alert-counter">4</span>
+      </a>
+
+      <a href="modules/fairness-reports.html" class="sidebar-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="20" x2="18" y2="10"></line>
+          <line x1="12" y1="20" x2="12" y2="4"></line>
+          <line x1="6" y1="20" x2="6" y2="14"></line>
+        </svg>
+        <span>Fairness & Reports</span>
+      </a>
+
+      <a href="modules/audit-log.html" class="sidebar-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        <span>Audit Log</span>
+      </a>
+
+    </nav>
+
+    <!-- Officer Profile & Logout in Sidebar -->
+    <div class="sidebar-footer">
+      <div class="officer-profile-card">
+        <div class="officer-avatar" aria-hidden="true">LR</div>
+        <div class="officer-details">
+          <span class="officer-name">Lakshmi Ramanathan</span>
+          <span class="officer-role">District Agronomy Lead</span>
+        </div>
+        <a href="login.html" class="officer-logout-btn" title="Sign out of Officer Portal" aria-label="Sign out">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+            <polyline points="16 17 21 12 16 7"></polyline>
+            <line x1="21" y1="12" x2="9" y2="12"></line>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+  </aside>
+
+  <!-- =========================================================================
+       2. Main Content Shell
+       ========================================================================= -->
+  <div class="officer-main-wrapper">
+    
+    <!-- Top Navigation Bar -->
+    <header class="officer-topbar">
+      
+      <div class="topbar-left">
+        <button type="button" class="sidebar-toggle-btn" id="sidebar-toggle-btn" aria-label="Toggle navigation menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+
+        <div class="topbar-page-heading">
+          <h1 class="topbar-title">Operational Overview</h1>
+          <div class="topbar-breadcrumbs">
+            <span>Officer Portal</span> &gt; Thanjavur West Agrarian Depot
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Search Bar -->
+      <div class="topbar-search-form">
+        <svg class="topbar-search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input 
+          type="text" 
+          id="topbar-search-input" 
+          class="topbar-search-input" 
+          placeholder="Filter bookings, machines, farmers...">
+        <span class="topbar-search-shortcut">Ctrl+K</span>
+      </div>
+
+      <!-- Right Actions: Demo Indicator, Notifications -->
+      <div class="topbar-right">
+        
+        <div class="demo-indicator-pill">
+          <span class="indicator-dot"></span>
+          Sample Data Mode
+        </div>
+
+        <!-- Notification Bell & Dropdown -->
+        <div style="position: relative;">
+          <button type="button" class="topbar-action-btn" id="topbar-notification-btn" aria-label="View notifications">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+            <span class="notification-badge-count">3</span>
+          </button>
+
+          <!-- Notification Dropdown Panel -->
+          <div class="notification-dropdown" id="notification-dropdown">
+            <div class="notification-dropdown-header">
+              <h4>System Alerts & Notifications</h4>
+              <a href="#" id="mark-all-read-btn" style="font-size: 0.75rem; color: #2a724b; font-weight: 700;">Mark all reviewed</a>
+            </div>
+            <div class="notification-list">
+              <div class="notification-item unread">
+                <div class="notification-icon-wrap alert">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path></svg>
+                </div>
+                <div class="notification-content">
+                  <div class="notification-title">Unfair Postponement Flag</div>
+                  <div class="notification-desc">Farmer FMR-409 has been postponed twice by private provider. Priority boosted.</div>
+                  <div class="notification-time">15 mins ago</div>
+                </div>
+              </div>
+
+              <div class="notification-item unread">
+                <div class="notification-icon-wrap priority">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                </div>
+                <div class="notification-content">
+                  <div class="notification-title">Pre-Monsoon Deadline Alert</div>
+                  <div class="notification-desc">3 bookings in Kumbakonam East reach critical paddy harvest window in 48 hours.</div>
+                  <div class="notification-time">1 hour ago</div>
+                </div>
+              </div>
+
+              <div class="notification-item">
+                <div class="notification-icon-wrap booking">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <div class="notification-content">
+                  <div class="notification-title">Machine MCH-CH-02 Dispatched</div>
+                  <div class="notification-desc">Combine Harvester DC-68G en route to Pattukkottai Women's Cooperative.</div>
+                  <div class="notification-time">3 hours ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </header>
+
+    <!-- Content Body -->
+    <main class="officer-content-body">
+
+      <!-- Disclaimer Banner -->
+      <div class="demo-banner">
+        <div class="demo-banner-content">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+          </svg>
+          <span>
+            <strong>Demonstration Template:</strong> All operational counts, farmer names, machine telemetry, and priority recommendations are realistic sample data designed for prototype testing.
+          </span>
+        </div>
+        <a href="modules/priority-scheduling.html" class="btn btn-primary btn-sm" style="font-size: 0.8rem; padding: 0.35rem 0.85rem;">
+          Open Fair Queue
+        </a>
+      </div>
+
+      <!-- Quick Actions Row -->
+      <div class="quick-actions-bar">
+        <a href="modules/bookings.html" class="quick-action-card">
+          <div class="quick-action-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+          </div>
+          <div class="quick-action-text">
+            <span class="quick-action-title">Review Bookings</span>
+            <span class="quick-action-sub">18 Pending Approvals</span>
+          </div>
+        </a>
+
+        <a href="modules/priority-scheduling.html" class="quick-action-card">
+          <div class="quick-action-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          </div>
+          <div class="quick-action-text">
+            <span class="quick-action-title">AI Fair Schedule</span>
+            <span class="quick-action-sub">7 High Priority Slots</span>
+          </div>
+        </a>
+
+        <a href="modules/machinery.html" class="quick-action-card">
+          <div class="quick-action-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+          </div>
+          <div class="quick-action-text">
+            <span class="quick-action-title">Check Harvesters</span>
+            <span class="quick-action-sub">24 / 32 Ready in Depot</span>
+          </div>
+        </a>
+
+        <a href="modules/alerts-complaints.html" class="quick-action-card">
+          <div class="quick-action-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path></svg>
+          </div>
+          <div class="quick-action-text">
+            <span class="quick-action-title">Fairness Alerts</span>
+            <span class="quick-action-sub">4 Items Require Review</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- 6 Sample Statistics Cards -->
+      <div class="stats-grid">
+        
+        <!-- 1. Total Booking Requests -->
+        <div class="stat-card">
+          <div class="stat-card-top">
+            <span class="stat-label">Total Requests</span>
+            <div class="stat-icon-wrapper info">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path></svg>
+            </div>
+          </div>
+          <div class="stat-value">142</div>
+          <div class="stat-meta">
+            <span class="stat-trend positive">&uarr; +14%</span>
+            <span>Harvest peak season</span>
+          </div>
+        </div>
+
+        <!-- 2. Pending Approvals -->
+        <div class="stat-card">
+          <div class="stat-card-top">
+            <span class="stat-label">Pending Approval</span>
+            <div class="stat-icon-wrapper warning">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            </div>
+          </div>
+          <div class="stat-value">18</div>
+          <div class="stat-meta">
+            <span class="stat-trend negative">&bull; Needs Officer Action</span>
+          </div>
+        </div>
+
+        <!-- 3. Available Machines -->
+        <div class="stat-card">
+          <div class="stat-card-top">
+            <span class="stat-label">Available Machines</span>
+            <div class="stat-icon-wrapper">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+            </div>
+          </div>
+          <div class="stat-value">24 <small style="font-size: 1.1rem; color: #5e7367; font-weight: 600;">/ 32</small></div>
+          <div class="stat-meta">
+            <span class="stat-trend positive">75% Depot Fleet</span>
+            <span>8 in field operations</span>
+          </div>
+        </div>
+
+        <!-- 4. High-Priority Requests -->
+        <div class="stat-card">
+          <div class="stat-card-top">
+            <span class="stat-label">High-Priority Queue</span>
+            <div class="stat-icon-wrapper danger">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            </div>
+          </div>
+          <div class="stat-value" style="color: #dc2626;">7</div>
+          <div class="stat-meta">
+            <span class="stat-trend negative">&uarr; Severe Spoilage Risk</span>
+          </div>
+        </div>
+
+        <!-- 5. Delayed Bookings -->
+        <div class="stat-card">
+          <div class="stat-card-top">
+            <span class="stat-label">Delayed Bookings</span>
+            <div class="stat-icon-wrapper purple">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line><circle cx="12" cy="12" r="10"></circle></svg>
+            </div>
+          </div>
+          <div class="stat-value">3</div>
+          <div class="stat-meta">
+            <span class="stat-trend neutral">Under Rescheduling</span>
+          </div>
+        </div>
+
+        <!-- 6. Open Fairness Alerts -->
+        <div class="stat-card">
+          <div class="stat-card-top">
+            <span class="stat-label">Fairness Alerts</span>
+            <div class="stat-icon-wrapper danger">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path></svg>
+            </div>
+          </div>
+          <div class="stat-value" style="color: #b91c1c;">4</div>
+          <div class="stat-meta">
+            <span class="stat-trend negative">Postponement audits</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Main Dashboard Grid: Recent Bookings & Status Distribution Visual -->
+      <div class="dashboard-main-grid">
+        
+        <!-- Left Column: Recent Bookings Table -->
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h3 class="admin-card-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              Recent Booking Requests
+            </h3>
+            <a href="modules/bookings.html" class="btn btn-outline btn-sm">View All (142)</a>
+          </div>
+
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Booking ID</th>
+                  <th>Farmer</th>
+                  <th>Machine Type</th>
+                  <th>Harvest Window</th>
+                  <th>Score</th>
+                  <th>Status</th>
+                  <th>Quick Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong class="booking-id-text">BK-2026-081</strong></td>
+                  <td>
+                    <div style="font-weight: 700;">Ananya Devi</div>
+                    <div style="font-size: 0.75rem; color: #5e7367;">Kumbakonam (2.2 ac)</div>
+                  </td>
+                  <td>Combine Harvester 75HP</td>
+                  <td>
+                    <span style="color: #dc2626; font-weight: 700;">2 Days Left</span>
+                  </td>
+                  <td>
+                    <span class="score-badge high">94</span>
+                  </td>
+                  <td class="status-cell">
+                    <span class="status-pill status-pending">Pending</span>
+                  </td>
+                  <td>
+                    <div class="action-btn-group">
+                      <button type="button" class="btn-icon-action approve btn-quick-approve" title="Approve Booking">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      </button>
+                      <button type="button" class="btn-icon-action btn-view-booking-details" data-id="BK-2026-081" title="View Snapshot">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td><strong class="booking-id-text">BK-2026-082</strong></td>
+                  <td>
+                    <div style="font-weight: 700;">Meenakshi Sundaram</div>
+                    <div style="font-size: 0.75rem; color: #5e7367;">Pattukkottai (1.5 ac)</div>
+                  </td>
+                  <td>Multi-Crop Thresher</td>
+                  <td>
+                    <span style="color: #ea580c; font-weight: 700;">3 Days Left</span>
+                  </td>
+                  <td>
+                    <span class="score-badge high">89</span>
+                  </td>
+                  <td class="status-cell">
+                    <span class="status-pill status-pending">Pending</span>
+                  </td>
+                  <td>
+                    <div class="action-btn-group">
+                      <button type="button" class="btn-icon-action approve btn-quick-approve" title="Approve Booking">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                      </button>
+                      <button type="button" class="btn-icon-action btn-view-booking-details" data-id="BK-2026-082" title="View Snapshot">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td><strong class="booking-id-text">BK-2026-079</strong></td>
+                  <td>
+                    <div style="font-weight: 700;">Kavitha Murugesan</div>
+                    <div style="font-size: 0.75rem; color: #5e7367;">Thanjavur West (3.0 ac)</div>
+                  </td>
+                  <td>Combine Harvester 60HP</td>
+                  <td>
+                    <span>Oct 16, 2026</span>
+                  </td>
+                  <td>
+                    <span class="score-badge medium">78</span>
+                  </td>
+                  <td class="status-cell">
+                    <span class="status-pill status-approved">Approved</span>
+                  </td>
+                  <td>
+                    <div class="action-btn-group">
+                      <button type="button" class="btn-icon-action btn-view-booking-details" data-id="BK-2026-079" title="View Snapshot">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td><strong class="booking-id-text">BK-2026-077</strong></td>
+                  <td>
+                    <div style="font-weight: 700;">Rukmani Selvam</div>
+                    <div style="font-size: 0.75rem; color: #5e7367;">Mayiladuthurai (1.0 ac)</div>
+                  </td>
+                  <td>Paddy Transplanter</td>
+                  <td>
+                    <span>Oct 17, 2026</span>
+                  </td>
+                  <td>
+                    <span class="score-badge normal">64</span>
+                  </td>
+                  <td class="status-cell">
+                    <span class="status-pill status-in-progress">In Ops</span>
+                  </td>
+                  <td>
+                    <div class="action-btn-group">
+                      <button type="button" class="btn-icon-action btn-view-booking-details" data-id="BK-2026-077" title="View Snapshot">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Right Column: Visual Status Breakdown & Urgency Gauge -->
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h3 class="admin-card-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a10 10 0 0 1 10 10"></path></svg>
+              Booking Status Ratio
+            </h3>
+            <span class="admin-card-subtitle">Delta Depot Fleet</span>
+          </div>
+
+          <!-- Pure CSS Donut Chart Visual -->
+          <div class="chart-card-content">
+            <div class="donut-chart-wrapper" aria-label="Donut chart showing booking status breakdown">
+              <div class="donut-chart-center">
+                <span class="donut-center-total">142</span>
+                <span class="donut-center-label">Total Bookings</span>
+              </div>
+            </div>
+
+            <div class="chart-legend-list">
+              <div class="chart-legend-item">
+                <span class="legend-label-group">
+                  <span class="legend-color-dot approved"></span>
+                  Approved & Dispatched
+                </span>
+                <span class="legend-count">78 (55%)</span>
+              </div>
+              <div class="chart-legend-item">
+                <span class="legend-label-group">
+                  <span class="legend-color-dot pending"></span>
+                  Pending in Queue
+                </span>
+                <span class="legend-count">31 (22%)</span>
+              </div>
+              <div class="chart-legend-item">
+                <span class="legend-label-group">
+                  <span class="legend-color-dot in-ops"></span>
+                  In Field Harvesting
+                </span>
+                <span class="legend-count">19 (13%)</span>
+              </div>
+              <div class="chart-legend-item">
+                <span class="legend-label-group">
+                  <span class="legend-color-dot flagged"></span>
+                  Delayed / Flagged
+                </span>
+                <span class="legend-count">14 (10%)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Harvest Urgency Pressure Gauge -->
+          <div class="urgency-progress-bar-wrap">
+            <div class="progress-header">
+              <span>Weather & Harvest Pressure</span>
+              <span style="color: #dc2626;">13% Imminent Spoilage Risk</span>
+            </div>
+            <div class="progress-track" title="Distribution of harvest risk">
+              <div class="progress-segment normal" title="Normal timeline: 65%"></div>
+              <div class="progress-segment warning" title="Approaching deadline: 22%"></div>
+              <div class="progress-segment critical" title="Critical rain alert: 13%"></div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Secondary Grid: High-Priority Summary & Recent Alerts Panel -->
+      <div class="dashboard-secondary-grid">
+        
+        <!-- High-Priority Booking Summary -->
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h3 class="admin-card-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              High-Priority Fair Queue Summary
+            </h3>
+            <a href="modules/priority-scheduling.html" class="btn btn-outline btn-sm">Full Queue</a>
+          </div>
+
+          <div class="priority-list">
+            
+            <div class="priority-card-item">
+              <div class="priority-card-left">
+                <div class="priority-score-badge">
+                  96
+                  <small>Score</small>
+                </div>
+                <div class="priority-details">
+                  <span class="priority-farmer-name">FMR-388: Selvi Muthu</span>
+                  <div class="priority-meta">
+                    <span>Pattukkottai</span>
+                    <span style="color: #dc2626; font-weight: 700;">Rain forecast in 24h</span>
+                    <span>2 previous postponements</span>
+                  </div>
+                </div>
+              </div>
+              <span class="priority-chip priority-critical">Rank #1</span>
+            </div>
+
+            <div class="priority-card-item">
+              <div class="priority-card-left">
+                <div class="priority-score-badge">
+                  94
+                  <small>Score</small>
+                </div>
+                <div class="priority-details">
+                  <span class="priority-farmer-name">FMR-409: Ananya Devi</span>
+                  <div class="priority-meta">
+                    <span>Kumbakonam East</span>
+                    <span style="color: #dc2626; font-weight: 700;">48h Over-Ripening</span>
+                    <span>Smallholder protection</span>
+                  </div>
+                </div>
+              </div>
+              <span class="priority-chip priority-critical">Rank #2</span>
+            </div>
+
+            <div class="priority-card-item">
+              <div class="priority-card-left">
+                <div class="priority-score-badge" style="background:#fff7ed; color:#c2410c; border-color:#fed7aa;">
+                  88
+                  <small>Score</small>
+                </div>
+                <div class="priority-details">
+                  <span class="priority-farmer-name">FMR-415: Dhanalakshmi G.</span>
+                  <div class="priority-meta">
+                    <span>Thanjavur South</span>
+                    <span>3 days waiting</span>
+                    <span>Paddy Shattering Risk</span>
+                  </div>
+                </div>
+              </div>
+              <span class="priority-chip priority-high">Rank #3</span>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Recent Alerts Panel -->
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h3 class="admin-card-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path></svg>
+              Recent Operational & Fairness Alerts
+            </h3>
+            <a href="modules/alerts-complaints.html" class="btn btn-outline btn-sm">All Alerts (4)</a>
+          </div>
+
+          <div class="alert-feed">
+            
+            <div class="alert-feed-item critical">
+              <div class="alert-feed-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path></svg>
+              </div>
+              <div class="alert-feed-content">
+                <div class="alert-feed-title">Repeated Postponement Detected (ALT-902)</div>
+                <div class="alert-feed-desc">Farmer Smt. Selvi Muthu (FMR-388) was bumped twice by private vendor. System raised fairness priority score to 96.</div>
+                <div class="alert-feed-time">Reported Today at 08:30 AM &bull; Critical</div>
+              </div>
+            </div>
+
+            <div class="alert-feed-item warning">
+              <div class="alert-feed-icon">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+              </div>
+              <div class="alert-feed-content">
+                <div class="alert-feed-title">Machine Breakdown in Transit (ALT-899)</div>
+                <div class="alert-feed-desc">Combine Harvester MCH-CH-03 reported hydraulic line leak near Kumbakonam Depot. Replacement unit required.</div>
+                <div class="alert-feed-time">Reported Today at 07:15 AM &bull; High</div>
+              </div>
+            </div>
+
+            <div class="alert-feed-item">
+              <div class="alert-feed-icon" style="background:#e0f2fe; color:#0284c7;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+              </div>
+              <div class="alert-feed-content">
+                <div class="alert-feed-title">Operator Late Arrival Complaint (ALT-895)</div>
+                <div class="alert-feed-desc">Farmer reported operator arrived 3.5 hours past scheduled time slot. Dispatched fuel allowance compensation.</div>
+                <div class="alert-feed-time">Yesterday at 04:45 PM &bull; Under Review</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" aria-live="polite"></div>
+
+  <!-- Core Scripts -->
+  <script src="js/navigation.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

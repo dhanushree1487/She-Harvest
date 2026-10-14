@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="She Harvest Audit Log - Transparent, append-only chronological history of scheduling actions, overrides, and operator interventions.">
+  <title>Audit Log | She Harvest Officer Portal</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/audit-log.css">
+</head>
+<body class="officer-app-layout">
+
+  <!-- =========================================================================
+       1. Sidebar Navigation
+       ========================================================================= -->
+  <aside class="officer-sidebar" aria-label="Officer Sidebar Navigation">
+    
+    <div class="sidebar-header">
+      <a href="../dashboard.html" class="sidebar-logo">
+        <div class="sidebar-logo-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M12 2a9 9 0 0 1 9 9c0 4.97-4.03 9-9 9A9 9 0 0 1 3 11a9 9 0 0 1 9-9z"></path>
+            <path d="M12 7v10"></path>
+            <path d="M8 12c1.5 1 3 1 4 0s2.5-1 4 0"></path>
+          </svg>
+        </div>
+        <div class="sidebar-logo-text">
+          <span class="sidebar-logo-title">She<span>Harvest</span></span>
+          <span class="sidebar-logo-badge">Officer Operations</span>
+        </div>
+      </a>
+      <span class="sidebar-badge-pill">V1.0</span>
+    </div>
+
+    <!-- Navigation Links -->
+    <nav class="sidebar-nav">
+      
+      <span class="nav-section-title">Core Management</span>
+
+      <a href="../dashboard.html" class="sidebar-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+        <span>Dashboard</span>
+      </a>
+
+      <a href="bookings.html" class="sidebar-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+        <span>Booking Management</span>
+        <span class="nav-counter">18</span>
+      </a>
+
+      <a href="priority-scheduling.html" class="sidebar-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+        <span>AI Priority & Scheduling</span>
+        <span class="nav-counter" style="background-color: #fef3c7; color: #92400e;">7 Hot</span>
+      </a>
+
+      <a href="machinery.html" class="sidebar-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+        <span>Machinery Management</span>
+      </a>
+
+      <span class="nav-section-title">Oversight & Accountability</span>
+
+      <a href="alerts-complaints.html" class="sidebar-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+        <span>Alerts & Complaints</span>
+        <span class="nav-counter alert-counter">4</span>
+      </a>
+
+      <a href="fairness-reports.html" class="sidebar-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+        <span>Fairness & Reports</span>
+      </a>
+
+      <a href="audit-log.html" class="sidebar-link active">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        <span>Audit Log</span>
+      </a>
+
+    </nav>
+
+    <!-- Officer Profile & Logout -->
+    <div class="sidebar-footer">
+      <div class="officer-profile-card">
+        <div class="officer-avatar" aria-hidden="true">LR</div>
+        <div class="officer-details">
+          <span class="officer-name">Lakshmi Ramanathan</span>
+          <span class="officer-role">District Agronomy Lead</span>
+        </div>
+        <a href="../login.html" class="officer-logout-btn" title="Sign out" aria-label="Sign out">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+        </a>
+      </div>
+    </div>
+
+  </aside>
+
+  <!-- =========================================================================
+       2. Main Content Shell
+       ========================================================================= -->
+  <div class="officer-main-wrapper">
+    
+    <!-- Topbar -->
+    <header class="officer-topbar">
+      <div class="topbar-left">
+        <button type="button" class="sidebar-toggle-btn" id="sidebar-toggle-btn" aria-label="Toggle navigation menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+
+        <div class="topbar-page-heading">
+          <h1 class="topbar-title">Operational Audit Log</h1>
+          <div class="topbar-breadcrumbs">
+            <a href="../dashboard.html">Dashboard</a> &gt; <span>Immutable Audit Trail</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Search Bar -->
+      <div class="topbar-search-form">
+        <svg class="topbar-search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input 
+          type="text" 
+          id="topbar-search-input" 
+          class="topbar-search-input" 
+          placeholder="Search audit trail...">
+        <span class="topbar-search-shortcut">Ctrl+K</span>
+      </div>
+
+      <!-- Right Actions -->
+      <div class="topbar-right">
+        <div class="demo-indicator-pill">
+          <span class="indicator-dot"></span>
+          Sample Audit Stream
+        </div>
+
+        <button type="button" class="topbar-action-btn" id="topbar-notification-btn" aria-label="Notifications">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+          <span class="notification-badge-count">3</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content Body -->
+    <main class="officer-content-body">
+      
+      <!-- Module Header -->
+      <div class="module-header-block">
+        <div class="module-title-group">
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.25rem;">
+            <h2>System Audit Trail</h2>
+            <span class="append-only-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+              Append-Only Design
+            </span>
+          </div>
+          <p>
+            Chronological, immutable record of every priority override, booking approval, date reschedule, and maintenance status alteration.
+          </p>
+        </div>
+        <div class="module-action-buttons">
+          <button type="button" class="btn btn-outline btn-sm" id="btn-export-audit">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Export Log (CSV)
+          </button>
+        </div>
+      </div>
+
+      <!-- Prototype Notice -->
+      <div class="demo-banner">
+        <div class="demo-banner-content">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+          <span>
+            <strong>Audit Integrity Protocol:</strong> The production architecture is structured as an append-only transaction ledger. (Prototype demonstration mode: simulated records illustrating operational interventions).
+          </span>
+        </div>
+      </div>
+
+      <!-- Audit Table Card -->
+      <div class="admin-card">
+        
+        <!-- Toolbar: Filters by Officer, Action Type, Search -->
+        <div class="table-toolbar">
+          <div class="toolbar-filters">
+            
+            <!-- Officer Filter -->
+            <select id="audit-officer-filter" class="form-select" style="width: auto; padding: 0.45rem 1rem; font-size: 0.85rem; border-radius: var(--radius-full);">
+              <option value="all">All Officers & Automations</option>
+              <option value="OFF-TN-204">OFF-TN-204 (Lakshmi Ramanathan)</option>
+              <option value="OFF-TN-512">OFF-TN-512 (K. Arulmozhi)</option>
+              <option value="System Automation">System Automation Engine</option>
+            </select>
+
+            <!-- Action Type Filter -->
+            <select id="audit-action-filter" class="form-select" style="width: auto; padding: 0.45rem 1rem; font-size: 0.85rem; border-radius: var(--radius-full);">
+              <option value="all">All Action Types</option>
+              <option value="override">Priority Overrides</option>
+              <option value="approve">Booking Approvals</option>
+              <option value="reschedule">Reschedules</option>
+              <option value="reject">Rejections</option>
+              <option value="maintenance">Maintenance Changes</option>
+              <option value="resolve">Complaint Resolutions</option>
+            </select>
+          </div>
+
+          <div class="toolbar-search">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="text" id="audit-search-input" placeholder="Search by entity ID, reason...">
+          </div>
+        </div>
+
+        <!-- Audit Records Table -->
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Timestamp</th>
+                <th>Officer ID</th>
+                <th>Action Performed</th>
+                <th>Entity Affected</th>
+                <th>Value Transition</th>
+                <th>Mandatory Reason & Agronomic Justification</th>
+              </tr>
+            </thead>
+            <tbody id="audit-table-body">
+              
+              <!-- 1. Priority Override -->
+              <tr data-officer="OFF-TN-204" data-action="override">
+                <td class="audit-timestamp">2026-10-14 18:32:10</td>
+                <td>
+                  <div style="font-weight: 700;">OFF-TN-204</div>
+                  <div style="font-size: 0.72rem; color: #5e7367;">L. Ramanathan</div>
+                </td>
+                <td>
+                  <span class="audit-action-chip audit-action-override">Priority Override</span>
+                </td>
+                <td><strong>BK-2026-074</strong></td>
+                <td>
+                  <div class="audit-value-change">
+                    <span class="old-val">Rank #4</span>
+                    <span class="arrow">&rarr;</span>
+                    <span class="new-val">Rank #1</span>
+                  </div>
+                </td>
+                <td style="max-width: 320px; font-size: 0.84rem; color: #18281f;">
+                  Farmer experienced 2 previous postponements by external vendor; impending storm cloudburst forecast over coastal plot.
+                </td>
+              </tr>
+
+              <!-- 2. Booking Approval -->
+              <tr data-officer="OFF-TN-204" data-action="approve">
+                <td class="audit-timestamp">2026-10-14 17:15:44</td>
+                <td>
+                  <div style="font-weight: 700;">OFF-TN-204</div>
+                  <div style="font-size: 0.72rem; color: #5e7367;">L. Ramanathan</div>
+                </td>
+                <td>
+                  <span class="audit-action-chip audit-action-approve">Booking Approval</span>
+                </td>
+                <td><strong>BK-2026-079</strong></td>
+                <td>
+                  <div class="audit-value-change">
+                    <span class="old-val">Pending</span>
+                    <span class="arrow">&rarr;</span>
+                    <span class="new-val">Approved</span>
+                  </div>
+                </td>
+                <td style="max-width: 320px; font-size: 0.84rem; color: #18281f;">
+                  Automated verification completed for 3.0 acre paddy holding. Assigned Claas Crop Tiger from Thanjavur West Depot.
+                </td>
+              </tr>
+
+              <!-- 3. Booking Reschedule -->
+              <tr data-officer="OFF-TN-512" data-action="reschedule">
+                <td class="audit-timestamp">2026-10-14 15:40:22</td>
+                <td>
+                  <div style="font-weight: 700;">OFF-TN-512</div>
+                  <div style="font-size: 0.72rem; color: #5e7367;">K. Arulmozhi</div>
+                </td>
+                <td>
+                  <span class="audit-action-chip audit-action-override" style="background:#fef3c7; color:#92400e;">Reschedule</span>
+                </td>
+                <td><strong>BK-2026-074</strong></td>
+                <td>
+                  <div class="audit-value-change">
+                    <span class="old-val">Oct 14</span>
+                    <span class="arrow">&rarr;</span>
+                    <span class="new-val">Oct 16</span>
+                  </div>
+                </td>
+                <td style="max-width: 320px; font-size: 0.84rem; color: #18281f;">
+                  Wet clay soil unnavigable for 75HP harvester tracks after flash shower. Shifted date with mutual farmer consent.
+                </td>
+              </tr>
+
+              <!-- 4. System Automation Fairness Boost -->
+              <tr data-officer="System Automation" data-action="override">
+                <td class="audit-timestamp">2026-10-14 14:05:12</td>
+                <td>
+                  <div style="font-weight: 700; color: #0284c7;">System Auto</div>
+                  <div style="font-size: 0.72rem; color: #5e7367;">Fairness Engine</div>
+                </td>
+                <td>
+                  <span class="audit-action-chip audit-action-dispatch">Fairness Boost</span>
+                </td>
+                <td><strong>BK-2026-081</strong></td>
+                <td>
+                  <div class="audit-value-change">
+                    <span class="old-val">Score: 78</span>
+                    <span class="arrow">&rarr;</span>
+                    <span class="new-val">Score: 94</span>
+                  </div>
+                </td>
+                <td style="max-width: 320px; font-size: 0.84rem; color: #18281f;">
+                  Automated equity protection applied +25pts compensation because farmer reached 72h queue window without dispatch.
+                </td>
+              </tr>
+
+              <!-- 5. Maintenance Status Alteration -->
+              <tr data-officer="OFF-TN-204" data-action="maintenance">
+                <td class="audit-timestamp">2026-10-14 11:20:05</td>
+                <td>
+                  <div style="font-weight: 700;">OFF-TN-204</div>
+                  <div style="font-size: 0.72rem; color: #5e7367;">L. Ramanathan</div>
+                </td>
+                <td>
+                  <span class="audit-action-chip" style="background:#f5f3ff; color:#7c3aed; border:1px solid #ddd6fe;">Maintenance</span>
+                </td>
+                <td><strong>MCH-CH-03</strong></td>
+                <td>
+                  <div class="audit-value-change">
+                    <span class="old-val">Available</span>
+                    <span class="arrow">&rarr;</span>
+                    <span class="new-val">Maintenance</span>
+                  </div>
+                </td>
+                <td style="max-width: 320px; font-size: 0.84rem; color: #18281f;">
+                  Operator reported hydraulic fluid pressure loss in cutter bar lift cylinders. Unit pulled for urgent depot servicing.
+                </td>
+              </tr>
+
+              <!-- 6. Complaint Resolution -->
+              <tr data-officer="OFF-TN-512" data-action="resolve">
+                <td class="audit-timestamp">2026-10-14 09:45:30</td>
+                <td>
+                  <div style="font-weight: 700;">OFF-TN-512</div>
+                  <div style="font-size: 0.72rem; color: #5e7367;">K. Arulmozhi</div>
+                </td>
+                <td>
+                  <span class="audit-action-chip audit-action-resolve">Complaint Resolved</span>
+                </td>
+                <td><strong>ALT-895</strong></td>
+                <td>
+                  <div class="audit-value-change">
+                    <span class="old-val">Under Review</span>
+                    <span class="arrow">&rarr;</span>
+                    <span class="new-val">Resolved</span>
+                  </div>
+                </td>
+                <td style="max-width: 320px; font-size: 0.84rem; color: #18281f;">
+                  Investigated late arrival complaint. Operator reprimanded and fuel surcharge fully refunded to farmer's cooperative balance.
+                </td>
+              </tr>
+
+              <!-- 7. Booking Rejection with Documented Justification -->
+              <tr data-officer="OFF-TN-204" data-action="reject">
+                <td class="audit-timestamp">2026-10-13 16:30:18</td>
+                <td>
+                  <div style="font-weight: 700;">OFF-TN-204</div>
+                  <div style="font-size: 0.72rem; color: #5e7367;">L. Ramanathan</div>
+                </td>
+                <td>
+                  <span class="audit-action-chip audit-action-reject">Booking Rejected</span>
+                </td>
+                <td><strong>BK-2026-070</strong></td>
+                <td>
+                  <div class="audit-value-change">
+                    <span class="old-val">Pending</span>
+                    <span class="arrow">&rarr;</span>
+                    <span class="new-val">Rejected</span>
+                  </div>
+                </td>
+                <td style="max-width: 320px; font-size: 0.84rem; color: #18281f;">
+                  On-site field agronomist found grain moisture exceeding 28%; premature cutting would spoil yield. Advised farmer to rebook in 10 days.
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" aria-live="polite"></div>
+
+  <!-- Scripts -->
+  <script src="../js/navigation.js"></script>
+  <script src="../js/audit-log.js"></script>
+</body>
+</html>

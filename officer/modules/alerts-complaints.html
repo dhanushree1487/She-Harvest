@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="She Harvest Alerts & Complaints - Investigate potential unfair scheduling, emergency harvest windows, and farmer feedback.">
+  <title>Alerts & Complaints | She Harvest Officer Portal</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/alerts-complaints.css">
+</head>
+<body class="officer-app-layout">
+
+  <!-- =========================================================================
+       1. Sidebar Navigation
+       ========================================================================= -->
+  <aside class="officer-sidebar" aria-label="Officer Sidebar Navigation">
+    
+    <div class="sidebar-header">
+      <a href="../dashboard.html" class="sidebar-logo">
+        <div class="sidebar-logo-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M12 2a9 9 0 0 1 9 9c0 4.97-4.03 9-9 9A9 9 0 0 1 3 11a9 9 0 0 1 9-9z"></path>
+            <path d="M12 7v10"></path>
+            <path d="M8 12c1.5 1 3 1 4 0s2.5-1 4 0"></path>
+          </svg>
+        </div>
+        <div class="sidebar-logo-text">
+          <span class="sidebar-logo-title">She<span>Harvest</span></span>
+          <span class="sidebar-logo-badge">Officer Operations</span>
+        </div>
+      </a>
+      <span class="sidebar-badge-pill">V1.0</span>
+    </div>
+
+    <!-- Navigation Links -->
+    <nav class="sidebar-nav">
+      
+      <span class="nav-section-title">Core Management</span>
+
+      <a href="../dashboard.html" class="sidebar-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+        <span>Dashboard</span>
+      </a>
+
+      <a href="bookings.html" class="sidebar-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+        <span>Booking Management</span>
+        <span class="nav-counter">18</span>
+      </a>
+
+      <a href="priority-scheduling.html" class="sidebar-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+        <span>AI Priority & Scheduling</span>
+        <span class="nav-counter" style="background-color: #fef3c7; color: #92400e;">7 Hot</span>
+      </a>
+
+      <a href="machinery.html" class="sidebar-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+        <span>Machinery Management</span>
+      </a>
+
+      <span class="nav-section-title">Oversight & Accountability</span>
+
+      <a href="alerts-complaints.html" class="sidebar-link active">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+        <span>Alerts & Complaints</span>
+        <span class="nav-counter alert-counter">4</span>
+      </a>
+
+      <a href="fairness-reports.html" class="sidebar-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+        <span>Fairness & Reports</span>
+      </a>
+
+      <a href="audit-log.html" class="sidebar-link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        <span>Audit Log</span>
+      </a>
+
+    </nav>
+
+    <!-- Officer Profile & Logout -->
+    <div class="sidebar-footer">
+      <div class="officer-profile-card">
+        <div class="officer-avatar" aria-hidden="true">LR</div>
+        <div class="officer-details">
+          <span class="officer-name">Lakshmi Ramanathan</span>
+          <span class="officer-role">District Agronomy Lead</span>
+        </div>
+        <a href="../login.html" class="officer-logout-btn" title="Sign out" aria-label="Sign out">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+        </a>
+      </div>
+    </div>
+
+  </aside>
+
+  <!-- =========================================================================
+       2. Main Content Wrapper
+       ========================================================================= -->
+  <div class="officer-main-wrapper">
+    
+    <!-- Topbar -->
+    <header class="officer-topbar">
+      <div class="topbar-left">
+        <button type="button" class="sidebar-toggle-btn" id="sidebar-toggle-btn" aria-label="Toggle navigation menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+
+        <div class="topbar-page-heading">
+          <h1 class="topbar-title">Alerts & Complaints</h1>
+          <div class="topbar-breadcrumbs">
+            <a href="../dashboard.html">Dashboard</a> &gt; <span>Grievance & Fairness Watch</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Search Bar -->
+      <div class="topbar-search-form">
+        <svg class="topbar-search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input 
+          type="text" 
+          id="topbar-search-input" 
+          class="topbar-search-input" 
+          placeholder="Filter alerts by category, farmer...">
+        <span class="topbar-search-shortcut">Ctrl+K</span>
+      </div>
+
+      <!-- Right Actions -->
+      <div class="topbar-right">
+        <div class="demo-indicator-pill">
+          <span class="indicator-dot"></span>
+          Sample Audit Stream
+        </div>
+
+        <button type="button" class="topbar-action-btn" id="topbar-notification-btn" aria-label="Notifications">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+          <span class="notification-badge-count">3</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content Body -->
+    <main class="officer-content-body">
+      
+      <!-- Module Header -->
+      <div class="module-header-block">
+        <div class="module-title-group">
+          <h2>Operational Alerts & Grievances</h2>
+          <p>
+            Monitor automated fairness triggers, repeated postponements, machine breakdowns, and smallholder farmer feedback.
+          </p>
+        </div>
+        <div class="module-action-buttons">
+          <a href="fairness-reports.html" class="btn btn-outline btn-sm">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+            Fairness Trend Reports
+          </a>
+        </div>
+      </div>
+
+      <!-- Demo Note -->
+      <div class="demo-banner">
+        <div class="demo-banner-content">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+          <span>
+            <strong>Simulated Accountability Workflow:</strong> Marking complaints under review or resolved updates the local interface state and demonstrates officer resolution tracking.
+          </span>
+        </div>
+      </div>
+
+      <!-- Table Card -->
+      <div class="admin-card">
+        
+        <!-- Table Toolbar: Filters by Status & Severity -->
+        <div class="table-toolbar">
+          <div class="toolbar-filters">
+            <button type="button" class="filter-btn alert-status-filter-btn active" data-status="all">All Alerts (5)</button>
+            <button type="button" class="filter-btn alert-status-filter-btn" data-status="new">New (2)</button>
+            <button type="button" class="filter-btn alert-status-filter-btn" data-status="under-review">Under Review (2)</button>
+            <button type="button" class="filter-btn alert-status-filter-btn" data-status="resolved">Resolved (1)</button>
+
+            <!-- Severity Select -->
+            <select id="alert-severity-select" class="form-select" style="width: auto; padding: 0.45rem 1rem; font-size: 0.82rem; border-radius: var(--radius-full); margin-left: 0.5rem;">
+              <option value="all">All Severities</option>
+              <option value="critical">Critical Severity</option>
+              <option value="high">High Severity</option>
+              <option value="medium">Medium Severity</option>
+              <option value="low">Low Severity</option>
+            </select>
+          </div>
+
+          <div class="toolbar-search">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="text" id="alerts-search-input" placeholder="Search alert ID, farmer, issue...">
+          </div>
+        </div>
+
+        <!-- Data Table -->
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Alert ID</th>
+                <th>Category</th>
+                <th>Related Booking</th>
+                <th>Farmer ID & Name</th>
+                <th>Description</th>
+                <th>Date Reported</th>
+                <th>Severity</th>
+                <th>Review Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="alerts-table-body">
+              
+              <!-- 1. Repeated Postponements (Critical) -->
+              <tr data-status="new" data-severity="critical">
+                <td class="col-alert-id"><strong>ALT-902</strong></td>
+                <td class="col-alert-category">
+                  <span class="alert-category-badge" style="background:#fee2e2; color:#991b1b; border-color:#fecaca;">
+                    Repeated Postponements
+                  </span>
+                </td>
+                <td class="col-alert-booking"><strong>BK-2026-074</strong></td>
+                <td class="col-alert-farmer">
+                  <div style="font-weight: 700;">Selvi Muthu</div>
+                  <div style="font-size: 0.75rem; color: #5e7367;">FMR-388 &bull; Pattukkottai</div>
+                </td>
+                <td class="col-alert-desc" style="max-width: 260px;">
+                  Farmer experienced 2 consecutive booking delays by commercial operator. Algorithm flagged possible unfair queuing.
+                </td>
+                <td class="col-alert-date">Today, 08:30 AM</td>
+                <td class="col-alert-severity">
+                  <span class="severity-pill severity-critical">Critical</span>
+                </td>
+                <td class="col-alert-status">
+                  <span class="status-pill status-rejected">New Flag</span>
+                </td>
+                <td>
+                  <div class="action-btn-group">
+                    <button type="button" class="btn-icon-action btn-mark-under-review" title="Mark Under Investigation">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    </button>
+                    <button type="button" class="btn-icon-action approve btn-mark-resolved" title="Resolve & Take Action">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                    <button type="button" class="btn-icon-action btn-view-alert-details" title="View Full Report">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- 2. Urgent Harvest Deadlines (Critical) -->
+              <tr data-status="under-review" data-severity="critical">
+                <td class="col-alert-id"><strong>ALT-900</strong></td>
+                <td class="col-alert-category">
+                  <span class="alert-category-badge" style="background:#fee2e2; color:#991b1b; border-color:#fecaca;">
+                    Urgent Harvest Deadline
+                  </span>
+                </td>
+                <td class="col-alert-booking"><strong>BK-2026-081</strong></td>
+                <td class="col-alert-farmer">
+                  <div style="font-weight: 700;">Ananya Devi</div>
+                  <div style="font-size: 0.75rem; color: #5e7367;">FMR-409 &bull; Kumbakonam</div>
+                </td>
+                <td class="col-alert-desc" style="max-width: 260px;">
+                  Heavy rainfall predicted in 48 hours. Paddy moisture reached 23%; imminent lodging and grain shattering risk.
+                </td>
+                <td class="col-alert-date">Today, 07:45 AM</td>
+                <td class="col-alert-severity">
+                  <span class="severity-pill severity-critical">Critical</span>
+                </td>
+                <td class="col-alert-status">
+                  <span class="status-pill status-pending">Under Review</span>
+                </td>
+                <td>
+                  <div class="action-btn-group">
+                    <button type="button" class="btn-icon-action approve btn-mark-resolved" title="Resolve & Take Action">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                    <button type="button" class="btn-icon-action btn-view-alert-details" title="View Full Report">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- 3. Machine Breakdown / Booking Conflict (High) -->
+              <tr data-status="new" data-severity="high">
+                <td class="col-alert-id"><strong>ALT-899</strong></td>
+                <td class="col-alert-category">
+                  <span class="alert-category-badge">
+                    Booking Conflict & Breakdown
+                  </span>
+                </td>
+                <td class="col-alert-booking"><strong>BK-2026-084</strong></td>
+                <td class="col-alert-farmer">
+                  <div style="font-weight: 700;">Dhanalakshmi G.</div>
+                  <div style="font-size: 0.75rem; color: #5e7367;">FMR-415 &bull; Thanjavur South</div>
+                </td>
+                <td class="col-alert-desc" style="max-width: 260px;">
+                  Assigned combine harvester MCH-CH-03 had hydraulic hose burst. Depot must reassign an available unit.
+                </td>
+                <td class="col-alert-date">Today, 07:15 AM</td>
+                <td class="col-alert-severity">
+                  <span class="severity-pill severity-high">High</span>
+                </td>
+                <td class="col-alert-status">
+                  <span class="status-pill status-rejected">New Flag</span>
+                </td>
+                <td>
+                  <div class="action-btn-group">
+                    <button type="button" class="btn-icon-action btn-mark-under-review" title="Mark Under Investigation">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    </button>
+                    <button type="button" class="btn-icon-action approve btn-mark-resolved" title="Resolve & Take Action">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                    <button type="button" class="btn-icon-action btn-view-alert-details" title="View Full Report">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- 4. Possible Unfair Scheduling (High) -->
+              <tr data-status="under-review" data-severity="high">
+                <td class="col-alert-id"><strong>ALT-896</strong></td>
+                <td class="col-alert-category">
+                  <span class="alert-category-badge" style="background:#fffbeb; color:#92400e; border-color:#fde68a;">
+                    Possible Unfair Scheduling
+                  </span>
+                </td>
+                <td class="col-alert-booking"><strong>BK-2026-075</strong></td>
+                <td class="col-alert-farmer">
+                  <div style="font-weight: 700;">Vasanthi Govindan</div>
+                  <div style="font-size: 0.75rem; color: #5e7367;">FMR-371 &bull; Mayiladuthurai</div>
+                </td>
+                <td class="col-alert-desc" style="max-width: 260px;">
+                  Officer override assigned machine to adjacent 8-acre estate while smallholder had earlier deadline. Fairness audit trigger.
+                </td>
+                <td class="col-alert-date">Yesterday, 06:10 PM</td>
+                <td class="col-alert-severity">
+                  <span class="severity-pill severity-high">High</span>
+                </td>
+                <td class="col-alert-status">
+                  <span class="status-pill status-pending">Under Review</span>
+                </td>
+                <td>
+                  <div class="action-btn-group">
+                    <button type="button" class="btn-icon-action approve btn-mark-resolved" title="Resolve & Take Action">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </button>
+                    <button type="button" class="btn-icon-action btn-view-alert-details" title="View Full Report">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+
+              <!-- 5. Farmer Complaint: Late Arrival (Resolved) -->
+              <tr data-status="resolved" data-severity="medium">
+                <td class="col-alert-id"><strong>ALT-895</strong></td>
+                <td class="col-alert-category">
+                  <span class="alert-category-badge">
+                    Farmer Complaint
+                  </span>
+                </td>
+                <td class="col-alert-booking"><strong>BK-2026-068</strong></td>
+                <td class="col-alert-farmer">
+                  <div style="font-weight: 700;">Saraswathi Natarajan</div>
+                  <div style="font-size: 0.75rem; color: #5e7367;">FMR-355 &bull; Thanjavur East</div>
+                </td>
+                <td class="col-alert-desc" style="max-width: 260px;">
+                  Harvester driver arrived 3.5 hours late and demanded non-metered fuel cash payment. Surcharge waived; driver reprimanded.
+                </td>
+                <td class="col-alert-date">Oct 13, 2026</td>
+                <td class="col-alert-severity">
+                  <span class="severity-pill severity-medium">Medium</span>
+                </td>
+                <td class="col-alert-status">
+                  <span class="status-pill status-completed">Resolved</span>
+                </td>
+                <td>
+                  <div class="action-btn-group">
+                    <button type="button" class="btn-icon-action btn-view-alert-details" title="View Full Report">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" aria-live="polite"></div>
+
+  <!-- Scripts -->
+  <script src="../js/navigation.js"></script>
+  <script src="../js/alerts-complaints.js"></script>
+</body>
+</html>
