@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="She Harvest is a fair agricultural machinery booking platform empowering women smallholder farmers with transparent scheduling, equitable access, and cooperative mechanization.">
+  <title>She Harvest | Fair Agricultural Machinery Booking Platform</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans for clean modern typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="home/home.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       Site Header & Navigation
+       ========================================================================= -->
+  <header class="site-header" id="site-header">
+    <div class="container header-container">
+      
+      <!-- Brand Logo -->
+      <a href="index.html" class="site-logo" aria-label="She Harvest Homepage">
+        <div class="logo-icon-wrapper" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2a9 9 0 0 1 9 9c0 4.97-4.03 9-9 9A9 9 0 0 1 3 11a9 9 0 0 1 9-9z"></path>
+            <path d="M12 7v10"></path>
+            <path d="M8 12c1.5 1 3 1 4 0s2.5-1 4 0"></path>
+          </svg>
+        </div>
+        <div class="logo-text-group">
+          <span class="logo-title">She<span>Harvest</span></span>
+          <span class="logo-tagline">Fair Machinery Access</span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <ul class="nav-list">
+          <li>
+            <a href="index.html" class="nav-link active" aria-current="page">Home</a>
+          </li>
+          <li>
+            <a href="#about" class="nav-link">About</a>
+          </li>
+          <li>
+            <a href="#features" class="nav-link">Features</a>
+          </li>
+        </ul>
+
+        <!-- Action / Portal Access Buttons in Navigation -->
+        <div class="nav-actions">
+          <a href="farmer/farmer-login.html" class="btn btn-outline btn-sm" id="nav-farmer-btn">
+            Farmer Portal
+          </a>
+          <a href="officer/officer-login.html" class="btn btn-primary btn-sm" id="nav-officer-btn">
+            Officer Portal
+          </a>
+        </div>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       Main Content Area
+       ========================================================================= -->
+  <main class="site-main">
+
+    <!-- 1. Hero Section -->
+    <section class="hero-section" id="home">
+      <div class="container">
+        <div class="hero-grid">
+
+          <!-- Left Column: Content & Direct Portal Cards -->
+          <div class="hero-content">
+            
+            <div class="hero-badge-wrapper">
+              <span class="badge badge-agri">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+                Fair Mechanization Platform
+              </span>
+            </div>
+
+            <h1 class="hero-title">
+              Fair Access to <span class="highlight">Harvesting Machinery</span> for Every Woman Farmer
+            </h1>
+
+            <p class="hero-subtitle">
+              Empowering women smallholders through transparent machinery booking, fair scheduling, and better agricultural support.
+            </p>
+
+            <!-- Short Welcome Mission Box -->
+            <div class="welcome-card" role="region" aria-label="Welcome to She Harvest">
+              <div class="welcome-card-header">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary-medium)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="16" x2="12" y2="12"></line>
+                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+                <h2 class="welcome-card-title">Welcome to She Harvest</h2>
+              </div>
+              <p class="welcome-card-text">
+                She Harvest is dedicated to eliminating mechanization inequalities. By providing an open, accountable booking queue, we ensure women farmers receive combine harvesters, tractors, and threshers exactly when their crops require it.
+              </p>
+            </div>
+
+            <!-- Two Prominent Clickable Portal Cards -->
+            <div class="hero-portal-actions">
+              <p class="hero-actions-label">Select Your Portal to Get Started</p>
+
+              <div class="portal-buttons-grid">
+
+                <!-- 1. Farmer Portal Card -->
+                <a href="farmer/farmer-login.html" class="portal-quick-card farmer-theme" id="hero-farmer-portal-card" aria-label="Enter Farmer Portal">
+                  <div class="portal-card-top">
+                    <div class="portal-icon-box">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                      </svg>
+                    </div>
+                    <span class="badge badge-farmer">Farmer Access</span>
+                  </div>
+                  <h3 class="portal-card-title">Farmer Portal</h3>
+                  <p class="portal-card-desc">
+                    Book machinery slots, check booking queue status, and view allocated harvesting times.
+                  </p>
+                  <span class="portal-card-arrow">
+                    Enter Farmer Portal
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </span>
+                </a>
+
+                <!-- 2. Officer Portal Card -->
+                <a href="officer/officer-login.html" class="portal-quick-card officer-theme" id="hero-officer-portal-card" aria-label="Enter Officer Portal">
+                  <div class="portal-card-top">
+                    <div class="portal-icon-box">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                      </svg>
+                    </div>
+                    <span class="badge badge-officer">Officer Access</span>
+                  </div>
+                  <h3 class="portal-card-title">Officer Portal</h3>
+                  <p class="portal-card-desc">
+                    Coordinate machinery dispatch, review queue verification, and ensure fair allocations.
+                  </p>
+                  <span class="portal-card-arrow">
+                    Enter Officer Portal
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line>
+                      <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </span>
+                </a>
+
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Hero Agricultural Imagery & Badges -->
+          <div class="hero-media-wrapper">
+            <div class="hero-image-card">
+              <img 
+                src="assets/images/hero-harvest.jpg" 
+                alt="Women smallholder farmers working in agricultural fields with harvesting machinery during golden hour" 
+                class="hero-image"
+                width="720"
+                height="460"
+                loading="eager"
+              >
+
+              <!-- Floating badge 1: 100% Fair Queue -->
+              <div class="floating-pill pill-top-left">
+                <div class="pill-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <div>
+                  <div class="pill-title">100% Fair Allocation</div>
+                  <div class="pill-subtitle">Priority queues for smallholders</div>
+                </div>
+              </div>
+
+              <!-- Floating badge 2: Shared Machinery -->
+              <div class="floating-pill pill-bottom-right">
+                <div class="pill-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                </div>
+                <div>
+                  <div class="pill-title">Timely Harvest Windows</div>
+                  <div class="pill-subtitle">Minimizing post-harvest crop loss</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Features Section -->
+    <section class="features-section" id="features">
+      <div class="container">
+        
+        <div class="section-header">
+          <p class="section-pretitle">Engineered for Equity</p>
+          <h2 class="section-title">Why She Harvest Transforms Farming</h2>
+          <p class="section-desc">
+            A transparent booking ecosystem designed to eliminate middleman bias and guarantee women farmers dependable harvesting machinery.
+          </p>
+        </div>
+
+        <div class="features-grid">
+
+          <!-- Feature Card 1: Fair Machinery Access -->
+          <div class="feature-card" id="feature-fair-access">
+            <div class="feature-icon-wrapper" aria-hidden="true">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                <path d="M2 17l10 5 10-5"></path>
+                <path d="M2 12l10 5 10-5"></path>
+              </svg>
+            </div>
+            <h3 class="feature-title">Fair Machinery Access</h3>
+            <p class="feature-text">
+              Ensures women smallholder farmers receive fair, priority-driven access to expensive shared equipment—including combine harvesters, power tillers, and threshers—regardless of plot size.
+            </p>
+            <span class="feature-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              Equitable Distribution
+            </span>
+          </div>
+
+          <!-- Feature Card 2: Transparent Scheduling -->
+          <div class="feature-card" id="feature-transparent-scheduling">
+            <div class="feature-icon-wrapper" aria-hidden="true">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+            </div>
+            <h3 class="feature-title">Transparent Scheduling</h3>
+            <p class="feature-text">
+              Live equipment rosters and clear availability timelines ensure complete transparency. Farmers see their exact queue placement without arbitrary delays or preferential treatment.
+            </p>
+            <span class="feature-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              Open Timelines
+            </span>
+          </div>
+
+          <!-- Feature Card 3: Booking Status and Alerts -->
+          <div class="feature-card" id="feature-status-alerts">
+            <div class="feature-icon-wrapper" aria-hidden="true">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+              </svg>
+            </div>
+            <h3 class="feature-title">Booking Status and Alerts</h3>
+            <p class="feature-text">
+              Instant visual confirmation and automated schedule reminders help farmers prepare their fields for harvesting day, reducing grain loss caused by unpredictable weather changes.
+            </p>
+            <span class="feature-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              Real-Time Notifications
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 3. About Section -->
+    <section class="about-section" id="about">
+      <div class="container">
+        <div class="about-grid">
+
+          <!-- About Details -->
+          <div class="about-content">
+            <p class="section-pretitle">About the Initiative</p>
+            <h2 class="about-title">Bridging the Agricultural Mechanization Divide</h2>
+            <p class="about-paragraph">
+              Across many agricultural regions, women produce the majority of subsistence and cash crops yet have the least access to motorized machinery. High rental costs, lack of collaterals, and opaque booking queues often force women farmers to rely on exhausting manual harvesting or accept late equipment, leading to substantial yield losses.
+            </p>
+            <p class="about-paragraph">
+              <strong>She Harvest</strong> provides an institutional bridge. Through shared equipment pools and accountable officer oversight, the platform guarantees that machinery arrives when grains are ripe and weather is optimal.
+            </p>
+
+            <div class="about-pillars">
+              <div class="pillar-item">
+                <div class="pillar-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="pillar-name">Equitable Allocation</h4>
+                  <p class="pillar-desc">Scheduling prioritized by crop ripening urgency rather than commercial farm acreage.</p>
+                </div>
+              </div>
+
+              <div class="pillar-item">
+                <div class="pillar-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="3"></circle>
+                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="pillar-name">Cooperative Resource Sharing</h4>
+                  <p class="pillar-desc">Subsidized, shared-machinery pools operated under transparent public criteria.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- About Visual Summary Card -->
+          <div class="about-visual-card">
+            <div class="stats-card-header">
+              <h3 class="stats-card-title">Shared Community Machinery Fleet</h3>
+              <p class="stats-card-subtitle">Ready for upcoming seasonal harvests</p>
+            </div>
+
+            <div class="stats-grid">
+              <div class="stat-box">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Transparent Queue Tracking</div>
+              </div>
+              <div class="stat-box">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Verified Fair Pricing</div>
+              </div>
+              <div class="stat-box">
+                <div class="stat-number">40%</div>
+                <div class="stat-label">Faster Field Turnaround</div>
+              </div>
+              <div class="stat-box">
+                <div class="stat-number">0</div>
+                <div class="stat-label">Hidden Intermediary Fees</div>
+              </div>
+            </div>
+
+            <div class="portal-cta-banner">
+              <p style="font-size: 0.9rem; color: var(--color-text-body); margin-bottom: 1rem;">
+                Ready to manage or request your harvest equipment?
+              </p>
+              <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                <a href="farmer/farmer-login.html" class="btn btn-farmer btn-sm">Farmer Login</a>
+                <a href="officer/officer-login.html" class="btn btn-officer btn-sm">Officer Login</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Portal Selector CTA Banner -->
+    <section class="cta-portals-section" id="portals">
+      <div class="container">
+        <div class="cta-header">
+          <h2 class="cta-title">Ready to Access She Harvest?</h2>
+          <p class="cta-subtitle">
+            Choose your portal below to sign in and begin managing or reserving shared agricultural equipment.
+          </p>
+        </div>
+
+        <div class="cta-buttons-wrapper">
+          <a href="farmer/farmer-login.html" class="btn btn-farmer" id="cta-farmer-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            Sign in as Farmer
+          </a>
+
+          <a href="officer/officer-login.html" class="btn btn-officer" id="cta-officer-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+            Sign in as Agricultural Officer
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       Site Footer
+       ========================================================================= -->
+  <footer class="site-footer" id="site-footer">
+    <div class="container">
+      
+      <div class="footer-top">
+        
+        <!-- Brand & Description -->
+        <div class="footer-brand">
+          <div class="site-logo">
+            <div class="logo-icon-wrapper" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2a9 9 0 0 1 9 9c0 4.97-4.03 9-9 9A9 9 0 0 1 3 11a9 9 0 0 1 9-9z"></path>
+                <path d="M12 7v10"></path>
+                <path d="M8 12c1.5 1 3 1 4 0s2.5-1 4 0"></path>
+              </svg>
+            </div>
+            <div class="logo-text-group">
+              <span class="logo-title">She<span>Harvest</span></span>
+              <span class="logo-tagline">Fair Machinery Access</span>
+            </div>
+          </div>
+          
+          <p class="footer-desc">
+            She Harvest is a community-first agricultural technology initiative dedicated to providing transparent, fair, and reliable harvesting machinery access for women smallholder farmers.
+          </p>
+        </div>
+
+        <!-- Portals Links -->
+        <div class="footer-col">
+          <h3 class="footer-heading">Access Portals</h3>
+          <ul class="footer-links">
+            <li><a href="farmer/farmer-login.html" class="footer-link">Farmer Portal</a></li>
+            <li><a href="officer/officer-login.html" class="footer-link">Officer Portal</a></li>
+            <li><a href="#about" class="footer-link">About the Initiative</a></li>
+            <li><a href="#features" class="footer-link">Platform Features</a></li>
+          </ul>
+        </div>
+
+        <!-- Machinery & Services -->
+        <div class="footer-col">
+          <h3 class="footer-heading">Shared Equipment</h3>
+          <ul class="footer-links">
+            <li><span class="footer-link">Combine Harvesters</span></li>
+            <li><span class="footer-link">Paddy & Grain Threshers</span></li>
+            <li><span class="footer-link">Power Tillers & Mini Tractors</span></li>
+            <li><span class="footer-link">Crop Transport Trailers</span></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom">
+        <p>&copy; 2026 She Harvest. All rights reserved. Supporting Women Smallholder Farmers.</p>
+        <span class="footer-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          Fair Agri-Tech Prototype
+        </span>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>
